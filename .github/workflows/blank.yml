@@ -21,7 +21,7 @@ on:
         description: 'Test var'
         required: false
         type: string
-        default: ${{ vars.HODNOTA }}
+        default: vars.HODNOTA
 
   workflow_call:
 
