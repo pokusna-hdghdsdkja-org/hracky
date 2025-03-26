@@ -17,6 +17,11 @@ on:
         description: 'Specifies environment where the code should be deploy to [test, int, prod]'
         required: false
         type: string
+      hodnota:
+        description: 'Test var'
+        required: false
+        type: string
+        default: ${{ vars.HODNOTA }}
 
   workflow_call:
 
@@ -43,3 +48,5 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+          echo vars: ${{ vars.HODNOTA }}
+          echo inputs: ${{ inputs.hodnota }}
