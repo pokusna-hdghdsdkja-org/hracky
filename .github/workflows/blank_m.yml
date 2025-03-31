@@ -17,4 +17,4 @@ jobs:
         ips: ${{ fromJSON( '[["ja","je","ji","jo","ju"],["pa","pe","pi","po","pu"],["ca","ce","ci","co","cu"]]' ) }}
     uses: ./.github/workflows/blank.yml
     with:
-      xoxo: matrix.ips
+      xoxo: ${{ toJSON( matrix.ips ) }}
