@@ -24,6 +24,8 @@ on:
         default: vars.HODNOTA
 
   workflow_call:
+    inputs:
+      xoxo:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -59,5 +61,7 @@ jobs:
       matrix:
         ips: ${{ fromJSON( '["10.6.239.134","10.6.239.141","10.6.239.142","10.6.239.143"]' ) }}
     steps:
-      - run: echo ${{ matrix.ips }}
+      - run: |
+          echo ${{ matrix.ips }}
+          echo ${{ inputs.xoxo }}
  
