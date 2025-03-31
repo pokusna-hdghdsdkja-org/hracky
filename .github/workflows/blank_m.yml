@@ -13,9 +13,8 @@ jobs:
   a:
     strategy:
       fail-fast: false
-      max-parallel: 2
       matrix:
-        ips: ${{ fromJSON( '["1","2","3"]' ) }}
+        ips: ${{ fromJSON( '[["ja","je","ji","jo","ju"],["pa","pe","pi","po","pu"],["ca","ce","ci","co","cu"]]' ) }}
     uses: ./.github/workflows/blank.yml
     with:
       xoxo: matrix.ips
