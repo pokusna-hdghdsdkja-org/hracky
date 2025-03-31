@@ -55,13 +55,10 @@ jobs:
           echo inputs: ${{ inputs.hodnota }}
 
   a:
-    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       max-parallel: 1
       matrix:
-        ips: ${{ fromJSIN( inputs.xoxo ) }}
-    steps:
-      - run: |
-          echo ${{ matrix.ips }}
+        ips: ${{ fromJSON(inputs.xoxo) }}
+    uses: ./.github/workflows/blank.yml
  
